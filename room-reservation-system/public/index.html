@@ -1,0 +1,80 @@
+<!-- Основной HTML-документ для системы бронирования комнат -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Reservation System</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/main.min.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <!-- Логотип университета -->
+      <img src="https://www.turiba.lv/storage/files/logo_1.png" alt="University Logo">
+    </div>
+    <nav>
+      <!-- Навигационное меню -->
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Rooms</a></li>
+        <li><a href="#">Reservations</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Room Reservation System</h1>
+      <p>Manage your room reservations efficiently.</p>
+    </section>
+
+    <section class="room-availability">
+      <h2>Room Availability</h2>
+      <!-- Контейнер для календаря с бронированиями -->
+      <div id="calendar"></div>
+    </section>
+
+    <section class="booking-form">
+      <h2>Book a Room</h2>
+      <!-- Форма бронирования комнаты -->
+      <form id="bookingForm" onsubmit="submitBookingForm(event)">
+        <label for="room">Room:</label>
+        <select id="room" name="room" required>
+          <option value="1">Lab 101</option>
+          <option value="2">Seminar Hall</option>
+          <option value="3">Meeting Room</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime" name="startTime" required>
+
+        <label for="endTime">End Time:</label>
+        <input type="time" id="endTime" name="endTime" required>
+
+        <label for="purpose">Purpose:</label>
+        <input type="text" id="purpose" name="purpose" required>
+
+        <label for="attendees">Number of Attendees:</label>
+        <input type="number" id="attendees" name="attendees" required>
+
+        <button type="submit">Book Room</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 University Room Reservation System. All rights reserved.</p>
+  </footer>
+
+  <!-- Подключение библиотеки FullCalendar и скрипта -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/locales-all.global.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
